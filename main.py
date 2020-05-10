@@ -20,9 +20,15 @@ def index():
 def register():
     return render_template('forma_register.html')
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     return render_template('forma_in.html')
+
+
+@app.route('/personal_account', methods=['GET', 'POST'])
+def account():
+    return render_template('personal_accaunt.html', name='name', surname='1111')
 
 
 if __name__ == '__main__':
