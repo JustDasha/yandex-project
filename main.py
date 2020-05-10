@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect
-from flask_login import login_required, logout_user
+from flask_login import login_required, logout_user, current_user
 
 from data import db_session, forms
 from data.users import User
@@ -102,16 +102,19 @@ def logout():
 
 
 @app.route('/personal_account')
+@login_required
 def account():
-    return render_template('personal_accaunt.html', klass=0, subb='', less='')
+    return render_template('personal_accaunt.html', name=current_user.name)
 
 
 @app.route('/vibor_lessons')
+@login_required
 def vibor_lessons():
     return render_template('vibor_lessons.html')
 
 
 @app.route('/get_class')
+@login_required
 def get_class():
     session = db_session.create_session()
     b = session.query(Class).all()
@@ -119,6 +122,7 @@ def get_class():
 
 
 @app.route('/get_subject/<int:my_id>')
+@login_required
 def get_subject(my_id):
     session = db_session.create_session()
     b = session.query(Subject).filter(Subject.clas_id == my_id).all()
@@ -127,6 +131,7 @@ def get_subject(my_id):
 
 
 @app.route('/get_lesson/<int:my_id>')
+@login_required
 def get_lesson(my_id):
     session = db_session.create_session()
     b = session.query(Lessons).filter(Lessons.subject_id == my_id).all()
@@ -134,6 +139,7 @@ def get_lesson(my_id):
 
 
 @app.route('/lesson/<int:my_id>')
+@login_required
 def lesson(my_id):
     global lessons_learned
 
