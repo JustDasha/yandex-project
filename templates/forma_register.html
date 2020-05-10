@@ -66,11 +66,9 @@ background: url(static/image/7.png);
                 <div class="controls">
                     <input class="form-control" id="klas" maxlength="30" name="klas" type="int" />
                 </div>
-                {{message}}
                 <div class="child1">
-                    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
-    {{message}}
-                <!--<button type="button" class="btn btn-warning" onclick="document.location='/register'" style="width:150x;height:50px">Зарегистрироваться</button>-->
+                    <h3>{{message}}</h3>
+                    <p>{{ form.submit(type="submit", class="btn btn-warning", style="width:150x;height:50px") }}</p>
                 </div>
             </div>
         </div>

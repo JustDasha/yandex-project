@@ -12,7 +12,6 @@ from wtforms.fields.html5 import EmailField
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
-
 def main():
     db_session.global_init("db/School.sqlite")
     app.run()
@@ -24,7 +23,7 @@ class RegisterForm(FlaskForm):
     email = EmailField('Почта', validators=[DataRequired()])
     password = PasswordField('Пароль', validators=[DataRequired()])
     klas = IntegerField('Класс', validators=[DataRequired()])
-    submit = SubmitField('Войти')
+    submit = SubmitField('Зарегистрироваться')
 
 
 @app.route('/')
@@ -67,7 +66,7 @@ def login():
 
 @app.route('/personal_account', methods=['GET', 'POST'])
 def account():
-    return render_template('personal_accaunt.html', name='name', surname='1111')
+    return render_template('personal_accaunt.html')
 
 
 @app.route('/vibor_lessons', methods=['GET', 'POST'])
