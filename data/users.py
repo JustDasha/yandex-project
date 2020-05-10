@@ -4,6 +4,7 @@ from sqlalchemy.orm import relationship
 from .db_session import SqlAlchemyBase
 from sqlalchemy import orm
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin
 
 association_table = sqlalchemy.Table('association', SqlAlchemyBase.metadata,
     sqlalchemy.Column('users_id', sqlalchemy.Integer,
@@ -13,7 +14,7 @@ association_table = sqlalchemy.Table('association', SqlAlchemyBase.metadata,
 )
 
 
-class User(SqlAlchemyBase):
+class User(SqlAlchemyBase, UserMixin):
     __tablename__ = 'users'
 
     id = sqlalchemy.Column(sqlalchemy.Integer,
