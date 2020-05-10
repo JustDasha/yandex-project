@@ -1,5 +1,12 @@
-from flask import Flask, render_template
-from data import db_session
+from flask import Flask, render_template, redirect
+from data import db_session, forms
+from data.users import User
+
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, IntegerField, SubmitField
+from wtforms.validators import DataRequired
+from wtforms.fields.html5 import EmailField
+
 
 
 app = Flask(__name__)
@@ -11,6 +18,15 @@ def main():
     app.run()
 
 
+class RegisterForm(FlaskForm):
+    name = StringField('Имя', validators=[DataRequired()])
+    surname = StringField('Фамилия', validators=[DataRequired()])
+    email = EmailField('Почта', validators=[DataRequired()])
+    password = PasswordField('Пароль', validators=[DataRequired()])
+    klas = IntegerField('Класс', validators=[DataRequired()])
+    submit = SubmitField('Войти')
+
+
 @app.route('/')
 def index():
     return render_template('home_page.html')
@@ -18,7 +34,31 @@ def index():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template('forma_register.html')
+    form = RegisterForm()
+    print(1)
+    if form.validate_on_submit():
+        session = db_session.create_session()
+        print(2)
+        if session.query(User).filter(User.email == form.email.data).first():
+            return render_template('forma_register.html', title='Регистрация',
+                                   form=form,
+                                   message="Такой пользователь уже есть")
+        print(3)
+        user = User(
+            name=form.name.data,
+            surname=form.surname.data,
+            email=form.email.data,
+            password=form.password.data,
+            klas=form.klas.data
+        )
+        print(4)
+        user.set_password(form.password.data)
+        session.add(user)
+        session.commit()
+        return redirect('/login')
+    print(5)
+    return render_template('forma_register.html', title='Регистрация', form=form)
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
