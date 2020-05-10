@@ -54,11 +54,14 @@ def index():
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
+        print(10)
         session = db_session.create_session()
+        print(233)
         if session.query(User).filter(User.email == form.email.data).first():
             return render_template('forma_register.html', title='Регистрация',
                                    form=form,
                                    message="Такой пользователь уже есть")
+        print(23)
         user = User(
             name=form.name.data,
             surname=form.surname.data,
