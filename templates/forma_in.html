@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Вход</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style_form_in.css">
+       </head>
+  <body>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <div class="child2">
+      <header class="header">
+        <h2>Войдите в систему:</h2>
+      </header>
+    </div>
+
+<div class="child">
+    <div class="container">
+<form id="register-form" role="form" action="/auth/register/" method="post">
+    <div class="row">
+        <div class="form-group col-xs-3">
+            <div class="control-group required">
+
+
+                <header class="header">
+                <h3>Ваша почта</h3>
+                </header>
+                <div class="controls">
+                    <input class="form-control" id="email" maxlength="30" name="email" type="text" />
+                </div>
+
+                <header class="header">
+                <h3>Введите пароль:</h3>
+                </header>
+                <div class="controls">
+                    <input class="form-control" id="hashed_password" maxlength="30" name="hashed_password" type="int" />
+                </div>
+
+                <div class="child1">
+                <button type="button" class="btn btn-success" style="width:200x;height:50px">Войти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+    </div>
+
+</div>
+  </body>
+</html>

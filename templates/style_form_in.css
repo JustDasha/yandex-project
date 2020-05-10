@@ -1,0 +1,45 @@
+body{
+ background: url(7.png);
+}
+
+.child{
+  position: absolute;
+  top: 30%;
+  left: 41%;
+}
+.header {
+  display: flex;
+  padding: 8px 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  }
+
+ h3 {
+  position: relative;
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-size: 2em;
+  color: #fff;
+  left: -30%;
+  }
+
+.child1{
+  position: absolute;
+  top: 110%;
+  left: 39%;
+}
+
+.child2{
+  position: absolute;
+  top: 17%;
+  left: 35%;
+}
+
+
+  h2 {
+  position: relative;
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-size: 4em;
+  font-weight: 700;
+  color: #c2c1c1;
+  }

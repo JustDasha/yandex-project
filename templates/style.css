@@ -1,0 +1,101 @@
+﻿body{
+ background: url(4.png);
+}
+
+.child{
+  position: absolute;
+  top: 53%;
+  left: 6.5%;
+
+}
+}
+.parent{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+.child1{
+  position: absolute;
+  top: 17%;
+  left: 3%;
+  }
+
+.child2{
+  position: absolute;
+  top: 37%;
+  left: 3%;
+  }
+
+.child3{
+position: absolute;
+top: 63%;
+left: 3%;
+}
+
+.child4{
+position: absolute;
+top: 101%;
+left: 3%;
+}
+
+.child5{
+position: absolute;
+top: 101%;
+left: 42%;
+}
+
+.child6{
+position: absolute;
+top: 101%;
+left: 75%;
+}
+
+
+.child7{
+position: absolute;
+top: 130%;
+left: 35%;
+}
+
+.child8{
+position: absolute;
+top: 157%;
+left: 42%;
+}
+
+
+
+.header {
+  display: flex;
+  padding: 8px 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  }
+
+
+  h1 {
+  position: relative;
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-size: 8em;
+  font-weight: 5;
+  color: #fff;
+}
+
+  h2 {
+  position: relative;
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-size: 4em;
+  font-weight: 700;
+  color: #c2c1c1;
+  }
+
+  h3 {
+  position: relative;
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #c2c1c1;
+  }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Регистрация</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style_form.css">
+       </head>
+  <body>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <div class="child2">
+      <header class="header">
+        <h2>Пройди регистрацию:</h2>
+      </header>
+    </div>
+
+<div class="child">
+    <div class="container">
+<form id="register-form" role="form" action="/auth/register/" method="post">
+    <div class="row">
+        <div class="form-group col-xs-3">
+            <div class="control-group required">
+                <header class="header">
+                <h3>Ваше имя</h3>
+                </header>
+                <div class="controls">
+                    <input class="form-control" id="name" maxlength="30" name="name" type="text" />
+                </div>
+
+                <header class="header">
+                <h3 color="white">Ваша фамилия</h3>
+                </header>
+                <div class="controls">
+                    <input class="form-control" id="surname" maxlength="30" name="surname" type="text" />
+                </div>
+
+                <header class="header">
+                <h3>Ваша почта</h3>
+                </header>
+                <div class="controls">
+                    <input class="form-control", type="email" id="email" maxlength="30" name="email" type="text" />
+                </div>
+
+                <header class="header">
+                <h3>Придумайте пароль</h3>
+                </header>
+                <div class="controls">
+                    <input class="form-control" id="password" maxlength="30", type="password" name="password" type="int" />
+                </div>
+
+                <header class="header">
+                <h3>В каком вы классе?</h3>
+                </header>
+                <div class="controls">
+                    <input class="form-control" id="klas" maxlength="30" name="klas" type="int" />
+                </div>
+                {{message}}
+                <div class="child1">
+                <button type="button" class="btn btn-warning" onclick="document.location='/register'" style="width:150x;height:50px">Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+    </div>
+
+</div>
+  </body>
+</html>
