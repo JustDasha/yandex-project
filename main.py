@@ -56,7 +56,6 @@ def register():
         session.add(user)
         session.commit()
         return redirect('/login')
-    print(5)
     return render_template('forma_register.html', title='Регистрация', form=form)
 
 
