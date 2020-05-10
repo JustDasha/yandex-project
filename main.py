@@ -98,7 +98,7 @@ def logout():
 
 @app.route('/personal_account')
 def account():
-    return render_template('personal_accaunt.html')
+    return render_template('personal_accaunt.html', klass=0, subb='', less='')
 
 
 @app.route('/vibor_lessons')
