@@ -3,6 +3,9 @@ from flask_login import login_required, logout_user
 
 from data import db_session, forms
 from data.users import User
+from data.classs import Class
+from data.subject import Subject
+from data.lessons import Lessons
 
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, IntegerField, SubmitField
@@ -54,14 +57,11 @@ def index():
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
-        print(10)
         session = db_session.create_session()
-        print(233)
         if session.query(User).filter(User.email == form.email.data).first():
             return render_template('forma_register.html', title='Регистрация',
                                    form=form,
                                    message="Такой пользователь уже есть")
-        print(23)
         user = User(
             name=form.name.data,
             surname=form.surname.data,
@@ -82,7 +82,6 @@ def login():
     if form.validate_on_submit():
         session = db_session.create_session()
         user = session.query(User).filter(User.email == form.email.data).first()
-        print(1)
         if user and user.check_password(form.password.data):
             flask_login.login_user(user)
             return redirect("/personal_account")
@@ -107,6 +106,27 @@ def account():
 @app.route('/vibor_lessons')
 def vibor_lessons():
     return render_template('vibor_lessons.html')
+
+
+@app.route('/get_class')
+def get_class():
+    session = db_session.create_session()
+    b = session.query(Class).all()
+    return render_template('get_class.html', title='Выбор класса', items=b)
+
+
+@app.route('/get_subject/<int:my_id>')
+def get_subject(my_id):
+    session = db_session.create_session()
+    b = session.query(Subject).filter(Subject.id == my_id).all()
+    return render_template('get_subject.html', title='Выбор предмета', items=b)
+
+
+@app.route('/get_lesson/<int:my_id>')
+def get_lesson(my_id):
+    session = db_session.create_session()
+    b = session.query(Lessons).filter(Lessons.id == my_id).all()
+    return render_template('get_class.html', title='Выбор урока', items=b)
 
 
 if __name__ == '__main__':
