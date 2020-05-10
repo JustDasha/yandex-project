@@ -13,12 +13,16 @@ def main():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('home_page.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    pass
+    return render_template('forma_register.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template('forma_in.html')
 
 
 if __name__ == '__main__':
