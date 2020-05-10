@@ -27,10 +27,14 @@ maxwidth: 200px;
 
     <div class="child2">
         <header class="header">
-            <h2>Ваши уроки:</h2>
+            <h2>Выберите предмет:</h2>
         </header>
     </div>
-    <button type="button" onclick="document.location='/get_class'" class="btn btn-link">Выбрать новый урок</button>
+    <div class="get_class">
+        {% for item in items %}
+        <a href="{{url_for('get_lesson', my_id=item.id)}}">{{item.name_of_subject}}</a>
+        {% endfor %}
+    </div>
    <!-- <div class="child3">
         <div class="box-image">
             <figure>

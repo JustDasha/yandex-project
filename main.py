@@ -118,15 +118,16 @@ def get_class():
 @app.route('/get_subject/<int:my_id>')
 def get_subject(my_id):
     session = db_session.create_session()
-    b = session.query(Subject).filter(Subject.id == my_id).all()
+    b = session.query(Subject).filter(Subject.clas_id == my_id).all()
+    print(b, my_id)
     return render_template('get_subject.html', title='Выбор предмета', items=b)
 
 
 @app.route('/get_lesson/<int:my_id>')
 def get_lesson(my_id):
     session = db_session.create_session()
-    b = session.query(Lessons).filter(Lessons.id == my_id).all()
-    return render_template('get_class.html', title='Выбор урока', items=b)
+    b = session.query(Lessons).filter(Lessons.subject_id == my_id).all()
+    return render_template('get_lessons.html', title='Выбор урока', items=b)
 
 
 if __name__ == '__main__':
