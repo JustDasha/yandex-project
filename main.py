@@ -31,5 +31,10 @@ def account():
     return render_template('personal_accaunt.html', name='name', surname='1111')
 
 
+@app.route('/vibor_lessons', methods=['GET', 'POST'])
+def vibor_lessons():
+    return render_template('vibor_lessons.html')
+
+
 if __name__ == '__main__':
     main()
