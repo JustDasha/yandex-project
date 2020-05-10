@@ -11,7 +11,6 @@
           <style>
 body {
 background: url(static/image/8.png);
-maxwidth: 200px;
 }
 </style>
        </head>
@@ -21,22 +20,21 @@ maxwidth: 200px;
 
   <div class="child1">
       <header class="header">
-        <h2>Личный кабинет</h2>
+          <center><h2>Личный кабинет</h2></center>
       </header>
     </div>
 
-    <div class="child2">
+    <div style="position:fixed; top:10%;  left:70%">
         <header class="header">
-            <h2>Ваши уроки:</h2>
+            <h3>{{name}}</h3>
         </header>
     </div>
 
-    <div class="child3">
-        <header class="header">
-            <h2>{{name}}</h2>
-        </header>
+    <div style="position:fixed; top:26%;  left:5%">
+        <img style="position:fixed; top:20%;  left:0%" src="static/image/base.png">
+        <button type="button" onclick="document.location='/get_class'" style="font-size : 60px; position: absolute;
+        color: white;" class="btn btn-link">Выбрать новый урок</button>
     </div>
-    <button type="button" onclick="document.location='/get_class'" class="btn btn-link">Выбрать новый урок</button>
    <!-- <div class="child3">
         <div class="box-image">
             <figure>

@@ -104,7 +104,7 @@ def logout():
 @app.route('/personal_account')
 @login_required
 def account():
-    return render_template('personal_accaunt.html', name=current_user.name)
+    return render_template('personal_accaunt.html', name=current_user.name + ' ' + current_user.surname + '\t' + current_user.email)
 
 
 @app.route('/vibor_lessons')
@@ -118,7 +118,7 @@ def vibor_lessons():
 def get_class():
     session = db_session.create_session()
     b = session.query(Class).all()
-    return render_template('get_class.html', title='Выбор класса', items=b)
+    return render_template('get_class.html', title='Выбор класса', items=b, x=20)
 
 
 @app.route('/get_subject/<int:my_id>')

@@ -1,0 +1,41 @@
+.child{
+  position: absolute;
+  top: 53%;
+  left: 6.5%;
+
+}
+}
+.parent{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.get_class{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+
+
+
+
+.header {
+  display: flex;
+  padding: 8px 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  }
+
+
+
+  h2 {
+  position: relative;
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-size: 4em;
+  font-weight: 0;
+  color: #c2c1c1;
+  }

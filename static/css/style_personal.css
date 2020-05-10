@@ -1,10 +1,36 @@
-body{
- background: url(8.png);
+
+
+.child1{
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  }
+
+.child2{
+  position: absolute;
+  top: 25%;
+  left: 70%;
+  }
+
+.childd3{
+  position: absolute;
+  top: 25%;
+  left: 70%;
+  }
+
+/*Затемнение картинок при наведении*/
+.box-image a img,
+.box-image img{
+    opacity:1.0;
+}
+.box-image a img:hover,
+.box-image img:hover{
+    opacity:0.8;
 }
 
 .header {
   display: flex;
-  padding: 8px 50px;
+  padding: 80px 50px;
   background-repeat: no-repeat;
   background-position: center center;
 
@@ -22,40 +48,5 @@ body{
   position: relative;
   font-family: "Bebas Neue Cyrillic", sans-serif;
   font-size: 2.5em;
-  color: #c2c1c1;
+  color: #fff;
   }
-
-.child1{
-  position: absolute;
-  top: 5%;
-  left: 0%;
-  }
-
-
-.child2{
-  position: absolute;
-  top: 25%;
-  left: 0%;
-  }
-
-.child3{
-  position: absolute;
-  top: 40%;
-  left: 0%;
-  }
-
-  .child4{
-  position: absolute;
-  top: 10%;
-  left: 20%;
-  }
-
-/*Затемнение картинок при наведении*/
-.box-image a img,
-.box-image img{
-    opacity:1.0;
-}
-.box-image a img:hover,
-.box-image img:hover{
-    opacity:0.8;
-}

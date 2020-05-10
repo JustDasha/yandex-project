@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/static/css/style_personal.css">
           <style>
 body {
-background: url(static/image/8.png);
+background: url(/static/image/1.jpg);
 }
 </style>
        </head>
@@ -18,20 +18,11 @@ background: url(static/image/8.png);
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-  <div class="child1">
-      <header class="header">
-        <h2>Личный кабинет</h2>
-      </header>
-    </div>
 
-    <div class="child2">
-        <header class="header">
-            <h2>Урок:</h2>
-        </header>
     </div>
     <div class="get_les">
         {% for item in items %}
-        <h2>{{item.content}}</h2>
+        <h3 style="left: 1%; top: 50%;"><br>{{item.content}}</h3>
         {% endfor %}
     </div>
    <!-- <div class="child3">

@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="/static/css/style_personal.css">
           <style>
 body {
-background: url(static/image/8.png);
-maxwidth: 200px;
+background: url(/static/image/8.png);
 }
 </style>
        </head>
@@ -21,18 +20,18 @@ maxwidth: 200px;
 
   <div class="child1">
       <header class="header">
-        <h2>Личный кабинет</h2>
+        <h2>Выберите урок:</h2>
       </header>
     </div>
 
-    <div class="child2">
-        <header class="header">
-            <h2>Выберите урок:</h2>
-        </header>
-    </div>
+
     <div class="get_class">
         {% for item in items %}
-        <a href="{{url_for('lesson', my_id=item.id)}}">{{item.name_of_lesson}}</a>
+        <!-- <button type="button" class="btn btn-warning"  href="{{url_for('get_subject', my_id=item.id)}}" style="font-size : 80px; position: relative;
+        color: white; width:150x;height:120px">{{item.name}}</button>-->
+        <img style="position: absolute;" src="/static/image/base.png">
+        <a style="font-size : 130px; position: relative;
+        color: white; left: 5%" href="{{url_for('lesson', my_id=item.id)}}">{{item.name_of_lesson}}<br></a>
         {% endfor %}
     </div>
    <!-- <div class="child3">
