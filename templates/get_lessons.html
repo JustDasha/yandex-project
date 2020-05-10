@@ -32,7 +32,7 @@ maxwidth: 200px;
     </div>
     <div class="get_class">
         {% for item in items %}
-        <a href="{{url_for('get_lesson', my_id=item.id)}}">{{item.name_of_lesson}}</a>
+        <a href="{{url_for('lesson', my_id=item.id)}}">{{item.name_of_lesson}}</a>
         {% endfor %}
     </div>
    <!-- <div class="child3">

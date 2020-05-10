@@ -11,7 +11,6 @@
           <style>
 body {
 background: url(static/image/8.png);
-maxwidth: 200px;
 }
 </style>
        </head>
@@ -30,8 +29,10 @@ maxwidth: 200px;
             <h2>Урок:</h2>
         </header>
     </div>
-    <div class="get_class">
-        <h2>{{items.content}}</h2>
+    <div class="get_les">
+        {% for item in items %}
+        <h2>{{item.content}}</h2>
+        {% endfor %}
     </div>
    <!-- <div class="child3">
         <div class="box-image">

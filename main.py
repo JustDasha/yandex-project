@@ -135,9 +135,12 @@ def get_lesson(my_id):
 
 @app.route('/lesson/<int:my_id>')
 def lesson(my_id):
+    global lessons_learned
+
     lessons_learned.append(my_id)
     session = db_session.create_session()
     b = session.query(Lessons).filter(Lessons.id == my_id).all()
+    print(1)
     return render_template('see_lesson.html', title='Урок', items=b)
 
 
