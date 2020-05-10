@@ -60,9 +60,20 @@ def register():
     return render_template('forma_register.html', title='Регистрация', form=form)
 
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     return render_template('forma_in.html')
+
+
+@app.route('/personal_account', methods=['GET', 'POST'])
+def account():
+    return render_template('personal_accaunt.html', name='name', surname='1111')
+
+
+@app.route('/vibor_lessons', methods=['GET', 'POST'])
+def vibor_lessons():
+    return render_template('vibor_lessons.html')
 
 
 if __name__ == '__main__':

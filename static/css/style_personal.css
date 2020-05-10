@@ -15,7 +15,13 @@ body{
   position: relative;
   font-family: "Bebas Neue Cyrillic", sans-serif;
   font-size: 4em;
-  font-weight: 700;
+  color: #c2c1c1;
+  }
+
+  h3 {
+  position: relative;
+  font-family: "Bebas Neue Cyrillic", sans-serif;
+  font-size: 2.5em;
   color: #c2c1c1;
   }
 
@@ -24,6 +30,13 @@ body{
   top: 5%;
   left: 0%;
   }
+
+.child4{
+  position: absolute;
+  top: 0%;
+  left: -10%;
+  }
+
 
 .child2{
   position: absolute;
