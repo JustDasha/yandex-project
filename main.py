@@ -33,6 +33,9 @@ def main():
     app.run()
 
 
+lessons_learned = []
+
+
 class RegisterForm(FlaskForm):
     name = StringField('Имя', validators=[DataRequired()])
     surname = StringField('Фамилия', validators=[DataRequired()])
@@ -128,6 +131,14 @@ def get_lesson(my_id):
     session = db_session.create_session()
     b = session.query(Lessons).filter(Lessons.subject_id == my_id).all()
     return render_template('get_lessons.html', title='Выбор урока', items=b)
+
+
+@app.route('/lesson/<int:my_id>')
+def lesson(my_id):
+    lessons_learned.append(my_id)
+    session = db_session.create_session()
+    b = session.query(Lessons).filter(Lessons.id == my_id).all()
+    return render_template('see_lesson.html', title='Урок', items=b)
 
 
 if __name__ == '__main__':
