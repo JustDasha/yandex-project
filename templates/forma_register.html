@@ -26,7 +26,9 @@ background: url(static/image/7.png);
 
 <div class="child">
     <div class="container">
-<form id="register-form" role="form" action="/auth/register/" method="post">
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
     <div class="row">
         <div class="form-group col-xs-3">
             <div class="control-group required">
@@ -66,7 +68,9 @@ background: url(static/image/7.png);
                 </div>
                 {{message}}
                 <div class="child1">
-                <button type="button" class="btn btn-warning" onclick="document.location='/register'" style="width:150x;height:50px">Зарегистрироваться</button>
+                    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    {{message}}
+                <!--<button type="button" class="btn btn-warning" onclick="document.location='/register'" style="width:150x;height:50px">Зарегистрироваться</button>-->
                 </div>
             </div>
         </div>
