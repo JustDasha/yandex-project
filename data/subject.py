@@ -9,8 +9,8 @@ class Subject(SqlAlchemyBase):
 
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)
-    name_of_subject = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+    name_of_subject = sqlalchemy.Column(sqlalchemy.String, nullable=True)  # имя предмета
     clas_id = sqlalchemy.Column(sqlalchemy.Integer,
-                                sqlalchemy.ForeignKey("class.id"))
-    less = orm.relation("Lessons", back_populates='sub')
-    clas = orm.relation("Class")
+                                sqlalchemy.ForeignKey("class.id"))  # поле связи с таблицей классов
+    less = orm.relation("Lessons", back_populates='sub')  # связь с таблицей уроков
+    clas = orm.relation("Class")  # связь с таблицей классов
