@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect
 from flask_login import login_required, logout_user, current_user
 
-from data import db_session, forms
+from data import db_session
 from data.users import User
 from data.classs import Class
 from data.subject import Subject
@@ -31,9 +31,6 @@ def load_user(user_id):
 def main():
     db_session.global_init("db/School.sqlite")
     app.run()
-
-
-lessons_learned = []
 
 
 class RegisterForm(FlaskForm):
@@ -126,7 +123,6 @@ def get_class():
 def get_subject(my_id):
     session = db_session.create_session()
     b = session.query(Subject).filter(Subject.clas_id == my_id).all()
-    print(b, my_id)
     return render_template('get_subject.html', title='Выбор предмета', items=b)
 
 
@@ -141,12 +137,8 @@ def get_lesson(my_id):
 @app.route('/lesson/<int:my_id>')
 @login_required
 def lesson(my_id):
-    global lessons_learned
-
-    lessons_learned.append(my_id)
     session = db_session.create_session()
     b = session.query(Lessons).filter(Lessons.id == my_id).all()
-    print(1)
     return render_template('see_lesson.html', title='Урок', items=b)
 
 
