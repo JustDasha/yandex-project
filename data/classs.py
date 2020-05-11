@@ -10,5 +10,5 @@ class Class(SqlAlchemyBase):
 
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)
-    name = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    sub = orm.relation("Subject", back_populates='clas')
+    name = sqlalchemy.Column(sqlalchemy.String, nullable=True)  # имя класса
+    sub = orm.relation("Subject", back_populates='clas')  # связь с таблицей предметов
