@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Личный кабинет</title>
-    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -27,24 +26,10 @@ background: url(static/image/8.png);
     </div>
     <div class="get_class">
         {% for item in items %}
-        <!-- <button type="button" class="btn btn-warning"  href="{{url_for('get_subject', my_id=item.id)}}" style="font-size : 80px; position: relative;
-        color: white; width:150x;height:120px">{{item.name}}</button>-->
         <img style="position: absolute; left:-15%;" src="static/image/base.png">
         <a style="font-size : 130px; position: relative;
         color: white;" href="{{url_for('get_subject', my_id=item.id)}}">{{item.name}}<br></a>
         {% endfor %}
     </div>
-   <!-- <div class="child3">
-        <div class="box-image">
-            <figure>
-        <a onclick="document.location='/vibor_lessons'"><img src="static/image/1class.png"></a>
-        <a onclick="document.location='/vibor_lessons'"><img src="static/image/2class.png"></a>
-        <a onclick="document.location='/vibor_lessons'"><img src="static/image/3class.png"></a>
-        <a onclick="document.location='/vibor_lessons'"><img src="static/image/4class.png"></a>
-            </figure>
-        </div>
-    </div>-->
-
-
   </body>
 </html>
